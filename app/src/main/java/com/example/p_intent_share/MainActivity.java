@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     *@param subject      1.訊息標題
     *@param body         2.訊息內容
     *@param chooserTitle 3.選擇器彈窗標題
-    * */
+    */
     private void shareTo(String subject, String body, String chooserTitle) {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
