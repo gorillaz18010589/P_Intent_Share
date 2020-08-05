@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">P_Intent_Share</string>
+
+
+
+    <string name="share_twitter">P_Intent_Share</string>
+    <string name="share_facebook">P_Intent_Share</string>
+    <string name="share_sms">P_Intent_Share</string>
+    <string name="share_email_gmail">P_Intent_Share</string>
+    <string name="share_email_subject">P_Intent_Share</string>
+    <string name="share_email_native">P_Intent_Share</string>
+    <string name="share_chooser_text">P_Intent_Share</string>
+
+
+
+
+
+
+
 </resources>

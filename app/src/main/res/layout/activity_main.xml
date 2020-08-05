@@ -16,8 +16,21 @@
        <Button
            android:id="@+id/btnShare"
            android:layout_weight="1"
-           android:onClick="shareTo"
            android:text="shareTo"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"/>
+
+       <Button
+           android:id="@+id/btnShareType"
+           android:layout_weight="1"
+           android:text="btnShareType"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"/>
+
+       <Button
+           android:id="@+id/btnShareImg"
+           android:layout_weight="1"
+           android:text="btnShareImg"
            android:layout_width="0dp"
            android:layout_height="wrap_content"/>
 
