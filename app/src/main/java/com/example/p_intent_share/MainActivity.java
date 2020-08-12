@@ -12,14 +12,17 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnShare;
+    private boolean isQQ;
 
 
     @Override
@@ -49,6 +52,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                Uri uri = Uri.parse("https://s.yimg.com/ny/api/res/1.2/.EDssnwrmBOIF.hSQbREoQ--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9MTI4MDtoPTk2MA--/https://media.zenfs.com/zh-TW/ctwant_com_582/33dd8e3e4fdabe3438124e30a29b75a5");
                 shareImg("這是內容",uri);
+            }
+        });
+
+        findViewById(R.id.isQQ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isQQ =   ShareUtils.getInstance(MainActivity.this).isQQClientAvailable();
+                Log.v("hank","isQQ:" +isQQ);
+
+                if(isQQ){
+                    //有安裝ＱＱ
+//                    final String qqUrl = "mqqwpa://im/chat?chat_type=wpa&uin=22486880&version=1";
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(qqUrl)));
+
+                    Intent intent = getPackageManager().getLaunchIntentForPackage("com.tencent.mobileqq");
+                    startActivity(intent);
+                }else{
+                    //沒安裝ＱＱ
+                    Toast.makeText(MainActivity.this,"请安装QQ客户端",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -6,7 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <LinearLayout
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <Button
+            android:id="@+id/isQQ"
+            android:layout_weight="1"
+            android:text="isQQ"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
