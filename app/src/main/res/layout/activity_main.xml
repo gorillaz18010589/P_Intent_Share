@@ -24,6 +24,13 @@
             android:layout_height="wrap_content"/>
 
 
+        <Button
+            android:id="@+id/sendEmail"
+            android:layout_weight="1"
+            android:text="sendEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 

@@ -21,14 +21,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnShare;
+    private Button btnShare, sendEmail;
     private boolean isQQ;
+    private String gmaill ="gorillaz1801058@gmail.com";
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        init();
 
         findViewById(R.id.btnShare).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +79,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void init() {
+        sendEmail = findViewById(R.id.sendEmail);
+        sendEmail.setOnClickListener(onClickListener);
+    }
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.sendEmail:
+                    sendEmailTest();
+                    break;
+            }
+        }
+    };
+
+    //寄信給指定的人
+    private void sendEmailTest() {
+        Intent data= new Intent(Intent.ACTION_SENDTO);
+        data.setData(Uri.parse("mailto:" + gmaill));
+        data.putExtra(Intent.EXTRA_SUBJECT, "这是标题");
+        data.putExtra(Intent.EXTRA_TEXT, "这是内容");
+        startActivity(data);
+    }
+
+
+
 
 
     /* 分享功能傳送訊息給其他app
